@@ -1,3 +1,5 @@
+var version = '1';
+
 self.addEventListener('install', function(event) {
   console.log('SW installed ', version , ' -> ', new Date().toLocaleString());
   self.skipWaiting();
