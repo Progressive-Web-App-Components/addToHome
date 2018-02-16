@@ -5,7 +5,7 @@ self.addEventListener('install', function(event) {
     caches.open(version)
     .then(function(cache) {
       return cache.addAll([
-        'addToHome/index.html'
+        'index.html'
       ]);
     }));
 });
@@ -19,7 +19,7 @@ self.addEventListener('fetch', function(event) {
       }
 
       if(!navigator.onLine) {
-        return caches.match(new Request('addToHome/index.html'));
+        return caches.match(new Request('index.html'));
       }
       // The below line is buggy. The fetch header needs to be cleared after a request is done.
       //
